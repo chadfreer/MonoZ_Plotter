@@ -2,10 +2,10 @@
 
 echo "Starting set up procedure"
 
-echo "Sourcing Root. Comment this source out if error"
-source ~/Downloads/RootV6/bin/thisroot.sh
+echo "cmsenv: only currently needed for eos access"
+cmsenv
 
 echo "Setting up Params.txt"
-pwd >  Params.txt
+pwd >  plotter/Params.txt
 
 echo "Done. Thanks Mawfucka"

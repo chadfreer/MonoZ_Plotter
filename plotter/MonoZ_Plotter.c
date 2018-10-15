@@ -32,9 +32,9 @@
 #include "Definitions/Output.h"
 
 //Different Plotting methods
-#include "Plot_types/Distributions.h"		//Stacked Histograms
+#include "Plot_types/Distributions.h"			//Stacked Histograms
 #include "Plot_types/Normalized.h"			//Normalized Background vs Signal Histograms
-#include "Plot_types/Significance.h"		//Significance for distributions
+#include "Plot_types/Significance.h"			//Significance for distributions
 #include "Plot_types/NminusOne.h"			//Make N-1 plots
 #include "Plot_types/HeatMap.h"				//HeatMap for testing variables against each other
 #include "Plot_types/Cutflow.h"				//Cutflow map
@@ -42,15 +42,27 @@
 
 //Statics
 static int Total_count = 41;    //total number of variables for loops
+static TString workspace;
 
 //Main Plotter
 void MonoZ_Plotter(){
     //Intro to program
+    ifstream myfile ("Params.txt");
+    if (myfile.is_open()){
+       while ( !myfile.eof() ){
+          getline (myfile,workspace,'\t');
+          //getline (myfile,var1,'\t');
+          //getline (myfile,var2,'\t');
+          //getline (myfile,var3,'\t');
+          cout << workspace << endl:;
+       }
+       myfile.close();
+    }
+    else cout << "Unable to open file" << endl;	
+    //Set up the curent files to choose from
 	
-	//Set up the curent files to choose from
 	
-	
-	//begin the questioning
+    //begin the questioning
     cout << Intro << endl;
     cout << Charmeleon << endl;
     TString Style ;//= "Stack";
