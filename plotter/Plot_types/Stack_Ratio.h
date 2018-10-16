@@ -1,11 +1,10 @@
 //Code to make colored stack plots
 
 TCanvas * Distribution_Ratio_plots(int Branch_count) {
-    gErrorIgnoreLevel = kError; //Ignore everything below error
-
-    gStyle->SetOptStat(0);
-    gROOT->SetBatch(kTRUE); //do not display the canvas every time we make one.
-
+        gErrorIgnoreLevel = kError; //Ignore everything below error
+        gStyle->SetOptStat(0);
+        gROOT->SetBatch(kTRUE); //do not display the canvas every time we make one.
+     
 	//grab the file and the branches
 	//TCanvas * cs = new TCanvas("cs", "cs", 600, 500);
 	TCanvas *cs = new TCanvas("cc", "cc", 600, 600);
@@ -22,23 +21,6 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	p1->cd();
 	
 	
-    TFile *fZZ_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/ZZTo2L2Nu.root");
-	TFile *fTT_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/TTTo2L2Nu.root");
-	TFile *fWW_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/WWTo2L2Nu.root");
-	TFile *fWZ_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/WZTo3LNu.root");
-	TFile *fDY70_100 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-70to100.root");
-	TFile *fDY100_200_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-100to200.root");
-	TFile *fDY200_400_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-200to400.root");
-	TFile *fDY400_600_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-400to600.root");
-	TFile *fDY600_800_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-600to800.root");
-	TFile *fDY800_1200_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-800to1200.root");
-	TFile *fDY1200_2500_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-1200to2500.root");
-	TFile *fDY2500_Inf_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DYJetsToLL_M-50_HT-2500toInf.root");
-	TFile *fDoubleMuon_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DoubleMuon.root");
-	TFile *fDoubleEG_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/DoubleEG.root");
-	TFile *fMuonEG_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/MuonEG.root");
-	TFile *fSingleMuon_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/SingleMuon.root");
-	TFile *fSingleElectron_2017 = new TFile("/Users/Chad/Desktop/MonoZ_Analysis_Moriond-2019/root_files/NANOAOD/SingleElectron.root");
 	//Histograms
 	
 	//***********************ZZ***********************
@@ -125,13 +107,13 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	
 	//Prepare the data now
 	TH1D *DoubleEG_2017 = GetDATAhPt(fDoubleEG_2017, "Events", "DoubleEG_2017", "DoubleEG_2017",Branch_count, 0);
-	//TH1D *DoubleMuon_2017 = GetDATAhPt(fDoubleMuon_2017, "Events", "DoubleMuon_2017", "DoubleMuon_2017",Branch_count, 0);
-	//TH1D *MuonEG_2017 = GetDATAhPt(fMuonEG_2017, "Events", "MuonEG_2017", "MuonEG_2017",Branch_count, 0);
+	TH1D *DoubleMuon_2017 = GetDATAhPt(fDoubleMuon_2017, "Events", "DoubleMuon_2017", "DoubleMuon_2017",Branch_count, 0);
+	TH1D *MuonEG_2017 = GetDATAhPt(fMuonEG_2017, "Events", "MuonEG_2017", "MuonEG_2017",Branch_count, 0);
 	//TH1D *SingleElectron_2017 = GetDATAhPt(fSingleElectron_2017, "Events", "SingleElectron_2017", "SingleElectron_2017",Branch_count, 0);
 	//TH1D *SingleMuon_2017 = GetDATAhPt(fSingleMuon_2017, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
 	//Stitch together the data
-	//DoubleEG_2017->Add(DoubleMuon_2017);
-	//DoubleEG_2017->Add(MuonEG_2017);
+	DoubleEG_2017->Add(DoubleMuon_2017);
+	DoubleEG_2017->Add(MuonEG_2017);
 	//DoubleEG_2017->Add(SingleElectron_2017);
 	//DoubleEG_2017->Add(SingleMuon_2017);
 	

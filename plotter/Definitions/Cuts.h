@@ -1,46 +1,46 @@
 //Code to choose the cuts desired
 
-char const *TCuts[] = {		"preZmass > 81 && preZmass < 101"               /*ZMass						(0)*/,
-							"prepfMet > 100"                                 /*prepfMet					(1)*/,
-							"Zpt_Reco>20"                                   /*Zpt_Reco					(2)*/,
-							"DeltaPhiZMet > .8"                             /*DeltaPhiZMet				(3)*/,
-							"Balance > 0.6"                                   /*Balance					(4)*/,
-							""                                              /*DeltaPhill				(5)*/,
-							""                                              /*DeltaEtall				(6)*/,
-							"LeadingPtll > 20"                              /*LeadingPtll				(7)*/,
-							"TrailingPtll >20"                              /*TrailingPtll				(8)*/,
-							""                                              /*LeadingEtall				(9)*/,
-							""                                              /*TrailingEtall				(10)*/,
-							""                                              /*Etall						(11)*/,
-							""                                              /*Rapidityll				(12)*/,
-							"ngoodjets > 1"                                 /*ngoodjets					(13)*/,
-							"LeadingJetPt > 50"                             /*LeadingJetPt				(14)*/,
-							"subLeadingJetPt > 30"                          /*subLeadingJetPt			(15)*/,
-							""												/*LeadingJetEta				(16)*/,
-							""												/*subLeadingJetEta			(17)*/,
-							"DijetMass > 500"                               /*DijetMass		1000			(18)*/,
-							""                                              /*DeltaPhijj				(19)*/,
-							"DeltaEtajj > 3"                                /*DeltaEtajj				(20)*/,
-							"nBjets < 1"                                    /*nBjets					(21)*/,
-							""                                              /*xJet						(22)*/,
-							"xZ < 0.5"                                     /*xZ							(23)*/,
-							"Zeppenfeld > -2 && Zeppenfeld < 2"              /*Zeppenfeld				(24)*/,
-							""                                              /*ZeppenfeldLep1			(25)*/,
-							""                                              /*ZeppenfeldLep2			(26)*/,
-							"xMet > 0.2"									/*xMet						(27)*/,
-							"HT>200"                                        /*HT						(28)*/,
-							"HTF > 0.7"                                     /*HTF	0.55					(29)*/,
-							""                                              /*JetPtRatio				(30)*/,
-							"JetEtaMultiplicity < -2"                        /*JetEtaMultiplicity 1		(31)*/,
-							""                                              /*DPTOZ						(32)*/,
-							""                                              /*CJVPt						(33)*/,
-							""                                              /*CJVPtSum					(34)*/,
-							""												/*Rpt						(35)*/,
-							""												/*genjets					(36)*/,
-							"DeltaPhiLeadingJetMet > 1"						/*DeltaPhiLeadingJetMet		(37)*/,
-							""												/*DeltaPhiClosestJetMet		(38)*/,
-							"DeltaPhiFarthestJetMet > 1"					/*DeltaPhiFarthestJetMet	(39)*/,
-							""												/*EtaThirdJet				(40)*/};
+char const *TCuts[] = {		"preZmass > 81 && preZmass < 101"               /*ZMass				(0)*/,
+				"prepfMet > 100"                                /*prepfMet			(1)*/,
+				"Zpt_Reco>20"                                   /*Zpt_Reco			(2)*/,
+				"DeltaPhiZMet > .8"                             /*DeltaPhiZMet			(3)*/,
+				"Balance > 0.6"                                   /*Balance			(4)*/,
+				""                                              /*DeltaPhill			(5)*/,
+				""                                              /*DeltaEtall			(6)*/,
+				"LeadingPtll > 20"                              /*LeadingPtll			(7)*/,
+				"TrailingPtll >20"                              /*TrailingPtll			(8)*/,
+				""                                              /*LeadingEtall			(9)*/,
+				""                                              /*TrailingEtall			(10)*/,
+				""                                              /*Etall				(11)*/,
+				""                                              /*Rapidityll			(12)*/,
+				"ngoodjets > 1"                                 /*ngoodjets			(13)*/,
+				"LeadingJetPt > 50"                             /*LeadingJetPt			(14)*/,
+				"subLeadingJetPt > 30"                          /*subLeadingJetPt		(15)*/,
+				""						/*LeadingJetEta			(16)*/,
+				""						/*subLeadingJetEta		(17)*/,
+				"DijetMass > 500"                               /*DijetMass			(18)*/,
+				""                                              /*DeltaPhijj			(19)*/,
+				"DeltaEtajj > 3"                                /*DeltaEtajj			(20)*/,
+				"nBjets < 1"                                    /*nBjets			(21)*/,
+				""                                              /*xJet				(22)*/,
+				"xZ < 0.5"                                      /*xZ				(23)*/,
+				"Zeppenfeld > -2 && Zeppenfeld < 2"             /*Zeppenfeld			(24)*/,
+				""                                              /*ZeppenfeldLep1		(25)*/,
+				""                                              /*ZeppenfeldLep2		(26)*/,
+				"xMet > 0.2"					/*xMet				(27)*/,
+				"HT>200"                                        /*HT				(28)*/,
+				"HTF > 0.7"                                     /*HTF	0.55			(29)*/,
+				""                                              /*JetPtRatio			(30)*/,
+				"JetEtaMultiplicity < -2"                       /*JetEtaMultiplicity 1		(31)*/,
+				""                                              /*DPTOZ				(32)*/,
+				""                                              /*CJVPt				(33)*/,
+				""                                              /*CJVPtSum			(34)*/,
+				""						/*Rpt				(35)*/,
+				""						/*genjets			(36)*/,
+				"DeltaPhiLeadingJetMet > 1"			/*DeltaPhiLeadingJetMet		(37)*/,
+				""						/*DeltaPhiClosestJetMet		(38)*/,
+				"DeltaPhiFarthestJetMet > 1"			/*DeltaPhiFarthestJetMet	(39)*/,
+				""						/*EtaThirdJet			(40)*/};
 
 
 
@@ -84,7 +84,7 @@ TH1D * GethPt(TFile *f, TString dataset,TString name,TString title, int Branch_c
     TCut PassLeadingJetEta = TCuts[16];
     TCut PassSubLeadingJetEta = TCuts[17];
     
-
+    //Set up the trigger
     TCut cOther = "HLT_Ele27_WPTight_Gsf || HLT_IsoMu24 || HLT_Mu50 || HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ|| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL || HLT_Mu17_TrkIsoVVL || HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ || HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ || HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL || HLT_Photon50_R9Id90_HE10_IsoM || HLT_Photon75_R9Id90_HE10_IsoM || HLT_Photon90_R9Id90_HE10_IsoM || HLT_Mu17 || HLT_Ele115_CaloIdVT_GsfTrkIdT";
     //No Cuts
     if (opt==0) cOther = "";
@@ -119,8 +119,8 @@ TH1D * GethPt(TFile *f, TString dataset,TString name,TString title, int Branch_c
 	for (int i = 0; i < nData; ++i) if (Data[i][0]==title) ind = i;
 	double nGen = atof(Data[ind][2]);
 	double kCX = atof(Data[ind][1]);
-	//double kSc = (nEv==0) ? 0 : 41500/nGen*kCX; 9.755
-	double kSc = (nEv==0) ? 0 : 16800/nGen*kCX;
+	double kSc = (nEv==0) ? 0 : 41500/nGen*kCX;
+	//double kSc = (nEv==0) ? 0 : 16800/nGen*kCX;
 	hPt->Scale(kSc);
 	Color_t kCol;
 	if (Data[ind][4]=="DY") kCol = kPink+1;
@@ -134,12 +134,6 @@ TH1D * GethPt(TFile *f, TString dataset,TString name,TString title, int Branch_c
 	float nEv2 = hPt->Integral(0,nBins[Branch_count]);
 	cout << title << "    GEN:   " <<  nEv << "     RECO:   " << nEv2 <<endl;
 	
-//	//Color and normalize plots
-//    for (int i = 0; i < nData; ++i) if (Data[i]==title) ind = i;
-//    double kSc = (nEv==0) ? 0 : 35900/nGen[ind]*kCX[ind];
-//    cout << title << "    " <<  nEv <<endl;
-//    hPt->Scale(kSc);
-//    hPt->SetFillColor(kCol[ind]);
 	return hPt;
 };
 
@@ -184,7 +178,7 @@ TH1D * GetDATAhPt(TFile *f, TString dataset,TString name,TString title, int Bran
 	TCut PassLeadingJetEta = TCuts[16];
 	TCut PassSubLeadingJetEta = TCuts[17];
 	
-	
+	//Set up the trigger
 	TCut cOther = "HLT_Ele27_WPTight_Gsf || HLT_IsoMu24 || HLT_Mu50 || HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ|| HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL || HLT_Mu17_TrkIsoVVL || HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ || HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ || HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL || HLT_Photon50_R9Id90_HE10_IsoM || HLT_Photon75_R9Id90_HE10_IsoM || HLT_Photon90_R9Id90_HE10_IsoM || HLT_Mu17 || HLT_Ele115_CaloIdVT_GsfTrkIdT";
 	//No Cuts
 	if (opt==0) cOther = "";
@@ -213,29 +207,9 @@ TH1D * GetDATAhPt(TFile *f, TString dataset,TString name,TString title, int Bran
 	tr->Project(name,variable[Branch_count] ,"lep_category==1 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
 	//float nEv = hPt->Integral(0,nBins[Branch_count]);
 	
-	//Color and normalize plots
 	for (int i = 0; i < nData; ++i) if (Data[i][0]==title) ind = i;
-	//double nGen = atof(Data[ind][2]);
-	//double kCX = atof(Data[ind][1]);
-	//double kSc = (nEv==0) ? 0 : 35900/nGen*kCX;
-	//hPt->Scale(kSc);
-	//Color_t kCol;
-	//if (Data[ind][4]=="DY") kCol = kPink+1;
-	//if (Data[ind][4]=="ZZ") kCol = kOrange-2;
-	//if (Data[ind][4]=="TT") kCol = kGray+1;
-	//if (Data[ind][4]=="WW") kCol = kTeal+2;
-	//if (Data[ind][4]=="WZ") kCol = kAzure-4;
-	//if (Data[ind][4]=="VBS") kCol = kRed;
-	//if (Data[ind][4]=="LLDM") kCol = kBlue;
-	//hPt->SetFillColor(kCol);
 	float nEv2 = hPt->Integral(0,nBins[Branch_count]);
 	cout << title << "    GEN:   NONE"  << "     RECO:   " << nEv2 <<endl;
 	
-	//	//Color and normalize plots
-	//    for (int i = 0; i < nData; ++i) if (Data[i]==title) ind = i;
-	//    double kSc = (nEv==0) ? 0 : 35900/nGen[ind]*kCX[ind];
-	//    cout << title << "    " <<  nEv <<endl;
-	//    hPt->Scale(kSc);
-	//    hPt->SetFillColor(kCol[ind]);
 	return hPt;
 };

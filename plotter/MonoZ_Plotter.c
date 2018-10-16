@@ -30,6 +30,7 @@
 #include "Definitions/Variables.h"
 #include "Definitions/Cuts.h"
 #include "Definitions/Output.h"
+#include "Definitions/FilePaths.h"
 
 //Different Plotting methods
 #include "Plot_types/Distributions.h"			//Stacked Histograms
@@ -42,19 +43,21 @@
 
 //Statics
 static int Total_count = 41;    //total number of variables for loops
-static TString workspace;
+static string workspace;
 
 //Main Plotter
 void MonoZ_Plotter(){
     //Intro to program
     ifstream myfile ("Params.txt");
     if (myfile.is_open()){
-       while ( !myfile.eof() ){
-          getline (myfile,workspace,'\t');
+       while (getline(myfile, workspace)){
+          
+          //isstringstream ss(workspace);
+          //getline (myfile,workspace,'\t');
           //getline (myfile,var1,'\t');
           //getline (myfile,var2,'\t');
           //getline (myfile,var3,'\t');
-          cout << workspace << endl:;
+          cout << workspace << endl;
        }
        myfile.close();
     }
