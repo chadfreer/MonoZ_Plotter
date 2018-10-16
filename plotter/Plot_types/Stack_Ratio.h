@@ -45,16 +45,16 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	
 	//***********************DY***********************
 	//Start with pt-binned 2016 DY
-//    TH1D *DYJetsToLL50To100 = GethPt(f, "DYJetsToLL_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL50To100","DYJetsToLL50To100",Branch_count, 0);
-//    TH1D *DYJetsToLL100To250 = GethPt(f, "DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL100To250","DYJetsToLL100To250",Branch_count, 0);
-//    TH1D *DYJetsToLL250To400 = GethPt(f, "DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL250To400","DYJetsToLL250To400",Branch_count, 0);
-//    TH1D *DYJetsToLL400To650 = GethPt(f, "DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL400To650","DYJetsToLL400To650",Branch_count, 0);
-//    TH1D *DYJetsToLL650Toinf = GethPt(f, "DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL650Toinf","DYJetsToLL650Toinf",Branch_count, 0);
-//    //stitch together DY processes
-//    DYJetsToLL50To100->Add(DYJetsToLL100To250);
-//    DYJetsToLL50To100->Add(DYJetsToLL250To400);
-//    DYJetsToLL50To100->Add(DYJetsToLL400To650);
-//    DYJetsToLL50To100->Add(DYJetsToLL650Toinf);
+//        TH1D *DYJetsToLL50To100 = GethPt(f, "DYJetsToLL_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL50To100","DYJetsToLL50To100",Branch_count, 0);
+//        TH1D *DYJetsToLL100To250 = GethPt(f, "DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL100To250","DYJetsToLL100To250",Branch_count, 0);
+//        TH1D *DYJetsToLL250To400 = GethPt(f, "DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL250To400","DYJetsToLL250To400",Branch_count, 0);
+//        TH1D *DYJetsToLL400To650 = GethPt(f, "DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL400To650","DYJetsToLL400To650",Branch_count, 0);
+//        TH1D *DYJetsToLL650Toinf = GethPt(f, "DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8", "DYJetsToLL650Toinf","DYJetsToLL650Toinf",Branch_count, 0);
+//        //stitch together DY processes
+//        DYJetsToLL50To100->Add(DYJetsToLL100To250);
+//        DYJetsToLL50To100->Add(DYJetsToLL250To400);
+//        DYJetsToLL50To100->Add(DYJetsToLL400To650);
+//        DYJetsToLL50To100->Add(DYJetsToLL650Toinf);
 	
 	//Now 2017 ht-binned DY
 	TH1D *DYJetsToLL_HT70to100 = GethPt(fDY70_100, "Events", "DYJetsToLL_HT-70to100_2017","DYJetsToLL_HT-70to100_2017",Branch_count, 0);
@@ -80,30 +80,30 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	fullMC->Add(WWTo2L2Nu_2017);
 	fullMC->Add(WZTo3LNu_2017);
 	
-    //Plot everything
+        //Plot everything
 	THStack *s = new THStack("s", variable[Branch_count]);
     
 	s->Add(ZZTo2L2Nu_2017);
 	s->Add(WZTo3LNu_2017);
 	s->Add(WWTo2L2Nu_2017);
 	s->Add(TTTo2L2Nu_2017);
-    s->Add(DYJetsToLL_HT70to100);
+        s->Add(DYJetsToLL_HT70to100);
 
-    s->Draw("hist");
+        s->Draw("hist");
 
 	s->SetMinimum(0.01);
-    s->GetYaxis()->SetTitle("Events/Bin");
-    s->GetXaxis()->SetTitle(axis[Branch_count]);
-    s->SetTitle(variable[Branch_count]);
-    s->GetYaxis()->SetTitleOffset(1.4);
+        s->GetYaxis()->SetTitle("Events/Bin");
+        s->GetXaxis()->SetTitle(axis[Branch_count]);
+        s->SetTitle(variable[Branch_count]);
+        s->GetYaxis()->SetTitleOffset(1.4);
 
-//	//add the signal on top
-//	TH1D *ZZJJ_ZZTo2L2Nu = GethPt(f, "ZZJJ_ZZTo2L2Nu_EWK_13TeV-madgraph-pythia8", "ZZJJ_ZZTo2L2Nu", "ZZJJ_ZZTo2L2Nu",Branch_count, 0);
-//	ZZJJ_ZZTo2L2Nu->SetFillColorAlpha(2,0.1);
-//	ZZJJ_ZZTo2L2Nu->SetLineColorAlpha(2,.9);
-//	ZZJJ_ZZTo2L2Nu->SetLineWidth(2);
+//        //add the signal on top
+//	  TH1D *ZZJJ_ZZTo2L2Nu = GethPt(f, "ZZJJ_ZZTo2L2Nu_EWK_13TeV-madgraph-pythia8", "ZZJJ_ZZTo2L2Nu", "ZZJJ_ZZTo2L2Nu",Branch_count, 0);
+//	  ZZJJ_ZZTo2L2Nu->SetFillColorAlpha(2,0.1);
+//	  ZZJJ_ZZTo2L2Nu->SetLineColorAlpha(2,.9);
+// 	  ZZJJ_ZZTo2L2Nu->SetLineWidth(2);
 //
-//    ZZJJ_ZZTo2L2Nu->Draw("histsame");
+//        ZZJJ_ZZTo2L2Nu->Draw("histsame");
 	
 	//Prepare the data now
 	TH1D *DoubleEG_2017 = GetDATAhPt(fDoubleEG_2017, "Events", "DoubleEG_2017", "DoubleEG_2017",Branch_count, 0);
@@ -126,17 +126,17 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	
 	//Adjust canvas
 	cs->SetLeftMargin(0.1);
-    cs->SetTitle(axis[Branch_count]);
+        cs->SetTitle(axis[Branch_count]);
 	cs->SetLogy();
 	p1->SetLogy();
 	s->SetMinimum(0.1);
-    //cs->Modified();
+        //cs->Modified();
 	addText( 0.1, 0.5, 0.9, 0.95, "#bf{CMS Work in Progress}", kBlack);
-	//addText(0.65, 0.9, 0.9, 0.95,"ll ch., 41.5 fb^{-1} (13 TeV)",kBlack);
-	addText(0.65, 0.9, 0.9, 0.95,"#mu#mu ch., 9.755 fb^{-1} (13 TeV)",kBlack);
+	addText(0.65, 0.9, 0.9, 0.95,"ll ch., 41.5 fb^{-1} (13 TeV)",kBlack);
+	//addText(0.65, 0.9, 0.9, 0.95,"#mu#mu ch., 9.755 fb^{-1} (13 TeV)",kBlack);
 
 
-//Set up legend
+        //Set up legend
     
 	//TLegend* leg  = new TLegend(.62,.65,.85,.89);
 	TLegend* leg  = new TLegend(.72,.65,.95,.89);
@@ -160,7 +160,7 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	float WZev = WZTo3LNu_2017->Integral(0,nBins[Branch_count]);
 	float WWev = WWTo2L2Nu_2017->Integral(0,nBins[Branch_count]);
 	float TTev = TTTo2L2Nu_2017->Integral(0,nBins[Branch_count]);
-    float DYev = DYJetsToLL_HT70to100->Integral(0,nBins[Branch_count]);
+        float DYev = DYJetsToLL_HT70to100->Integral(0,nBins[Branch_count]);
 	float background = ZZev + WZev + WWev + TTev + DYev;
 	//float VBS = ZZJJ_ZZTo2L2Nu->Integral(0,nBins[Branch_count]);
 	float Dataev = DoubleEG_2017->Integral(0,nBins[Branch_count]);
@@ -177,7 +177,7 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	table->AddLine(.0,.28,1.,.28);
 	//table->AddText(Form("VBS#Rightarrow%g",VBS));
 	table->AddText(Form("Data#Rightarrow%g",Dataev));
-    table->SetFillColor(kGray);
+        table->SetFillColor(kGray);
 	//table->Draw("same");
 	
 	
@@ -213,5 +213,5 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	
 	cs->Modified();
 	cs->Update();
-    return cs;
+        return cs;
 };
