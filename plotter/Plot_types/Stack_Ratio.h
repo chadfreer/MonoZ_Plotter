@@ -42,6 +42,22 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	//TH1D *WZTo3LNu = GethPt(f, "WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8", "WZTo3LNu", "WZTo3LNu",Branch_count, 0); //2016 WZ
 	TH1D *WZTo3LNu_2017 = GethPt(fWZ_2017, "Events", "WZTo3LNu_2017", "WZTo3LNu_2017",Branch_count, 0); //2017 WZ
 	//WZTo3LNu->Add(WZTo3LNu_2017); //combine
+
+        //***********************VVV***********************
+        //TH1D *WWZ_2016 = GethPt(fWWZ_2016, "Events", "WWZ_2016", "WWZ_2016",Branch_count, 0); //2016 WZ
+        TH1D *WWZ_2017 = GethPt(fWWZ_2017, "Events", "WWZ_2017", "WWZ_2017",Branch_count, 0); //2017 WZ
+        //WWZ_2016->Add(WWZ_2017); //combine
+        
+        //TH1D *WZZ_2016 = GethPt(fWZZ_2016, "Events", "WZZ_2016", "WZZ_2016",Branch_count, 0); //2016 WZ
+        TH1D *WZZ_2017 = GethPt(fWZZ_2017, "Events", "WZZ_2017", "WZZ_2017",Branch_count, 0); //2017 WZ
+        //WZZ_2016->Add(WZZ_2017); //combine
+        
+        //TH1D *ZZZ_2016 = GethPt(fZZZ_2016, "Events", "ZZZ_2016", "ZZZ_2016",Branch_count, 0); //2016 WZ
+        TH1D *ZZZ_2017 = GethPt(fZZ_2017, "Events", "ZZZ_2017", "ZZZ_2017",Branch_count, 0); //2017 WZ
+        //ZZZ_2016->Add(ZZZ_2017); //combine
+
+        WWZ_2017->Add(WZZ_2017);
+	WWZ_2017->Add(ZZZ_2017);
 	
 	//***********************DY***********************
 	//Start with pt-binned 2016 DY
@@ -57,7 +73,7 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 //        DYJetsToLL50To100->Add(DYJetsToLL650Toinf);
 	
 	//Now 2017 ht-binned DY
-	TH1D *DYJetsToLL_HT70to100 = GethPt(fDY70_100, "Events", "DYJetsToLL_HT-70to100_2017","DYJetsToLL_HT-70to100_2017",Branch_count, 0);
+	TH1D *DYJetsToLL_HT70to100 = GethPt(fDY70_100_2017, "Events", "DYJetsToLL_HT-70to100_2017","DYJetsToLL_HT-70to100_2017",Branch_count, 0);
 	TH1D *DYJetsToLL_HT100to200 = GethPt(fDY100_200_2017, "Events", "DYJetsToLL_HT-100to200_2017","DYJetsToLL_HT-100to200_2017",Branch_count, 0);
 	TH1D *DYJetsToLL_HT200to400 = GethPt(fDY200_400_2017, "Events", "DYJetsToLL_HT-200to400_2017","DYJetsToLL_HT-200to400_2017",Branch_count, 0);
 	TH1D *DYJetsToLL_HT400to600 = GethPt(fDY400_600_2017, "Events", "DYJetsToLL_HT-400to600_2017","DYJetsToLL_HT-400to600_2017",Branch_count, 0);
@@ -79,6 +95,7 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	fullMC->Add(TTTo2L2Nu_2017);
 	fullMC->Add(WWTo2L2Nu_2017);
 	fullMC->Add(WZTo3LNu_2017);
+        fullMC->Add(WWZ_2017);
 	
         //Plot everything
 	THStack *s = new THStack("s", variable[Branch_count]);
@@ -87,6 +104,7 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	s->Add(WZTo3LNu_2017);
 	s->Add(WWTo2L2Nu_2017);
 	s->Add(TTTo2L2Nu_2017);
+	s->Add(WWZ_2017);
         s->Add(DYJetsToLL_HT70to100);
 
         s->Draw("hist");
@@ -109,12 +127,12 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	TH1D *DoubleEG_2017 = GetDATAhPt(fDoubleEG_2017, "Events", "DoubleEG_2017", "DoubleEG_2017",Branch_count, 0);
 	TH1D *DoubleMuon_2017 = GetDATAhPt(fDoubleMuon_2017, "Events", "DoubleMuon_2017", "DoubleMuon_2017",Branch_count, 0);
 	TH1D *MuonEG_2017 = GetDATAhPt(fMuonEG_2017, "Events", "MuonEG_2017", "MuonEG_2017",Branch_count, 0);
-	//TH1D *SingleElectron_2017 = GetDATAhPt(fSingleElectron_2017, "Events", "SingleElectron_2017", "SingleElectron_2017",Branch_count, 0);
+	TH1D *SingleElectron_2017 = GetDATAhPt(fSingleElectron_2017, "Events", "SingleElectron_2017", "SingleElectron_2017",Branch_count, 0);
 	//TH1D *SingleMuon_2017 = GetDATAhPt(fSingleMuon_2017, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
 	//Stitch together the data
 	DoubleEG_2017->Add(DoubleMuon_2017);
 	DoubleEG_2017->Add(MuonEG_2017);
-	//DoubleEG_2017->Add(SingleElectron_2017);
+	DoubleEG_2017->Add(SingleElectron_2017);
 	//DoubleEG_2017->Add(SingleMuon_2017);
 	
 	DoubleEG_2017->SetMarkerStyle(20);
@@ -126,13 +144,13 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	
 	//Adjust canvas
 	cs->SetLeftMargin(0.1);
-        cs->SetTitle(axis[Branch_count]);
+        //cs->SetTitle(axis[Branch_count]);
 	cs->SetLogy();
 	p1->SetLogy();
 	s->SetMinimum(0.1);
         //cs->Modified();
 	addText( 0.1, 0.5, 0.9, 0.95, "#bf{CMS Work in Progress}", kBlack);
-	addText(0.65, 0.9, 0.9, 0.95,"ll ch., 41.5 fb^{-1} (13 TeV)",kBlack);
+	addText(0.65, 0.9, 0.9, 0.95,"ee ch., 41.2 fb^{-1} (13 TeV)",kBlack);
 	//addText(0.65, 0.9, 0.9, 0.95,"#mu#mu ch., 9.755 fb^{-1} (13 TeV)",kBlack);
 
 
@@ -144,6 +162,7 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	leg->AddEntry(WZTo3LNu_2017, "WZ#rightarrow3l#nu","F");
 	leg->AddEntry(WWTo2L2Nu_2017,"WW#rightarrow2l2#nu","F");
 	leg->AddEntry(TTTo2L2Nu_2017,"TT#rightarrow2l2#nu","F");
+        leg->AddEntry(WWZ_2017,"VVV","F");
 	leg->AddEntry(DYJetsToLL_HT70to100,"DYJets#rightarrow2l","F");
 	//leg->AddEntry(ZZJJ_ZZTo2L2Nu,"ZZJJ#rightarrow2l2#nu","F");
 	
