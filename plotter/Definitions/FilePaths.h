@@ -54,7 +54,13 @@ TFile *fZZZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnaly
 TFile *fDoubleMuon_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/DoubleMuon/DoubleMuon_2017.root");
 TFile *fDoubleEG_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/DoubleEG/DoubleEG_2017.root");
 TFile *fMuonEG_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/MuonEG/MuonEG_2017.root");
-TFile *fSingleMuon_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/SingleMuon_2017_1.root");
+//TFile *fSingleMuon_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/SingleMuon_2017_1.root");
+TFile *fSingleMuon_2017_1 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/NewHope_MonoZ_2017_1210/181012_103136/SingleMuon_2017_1.root");
+TFile *fSingleMuon_2017_2 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/NewHope_MonoZ_2017_1210/181012_103200/SingleMuon_2017_2.root");
+TFile *fSingleMuon_2017_3 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/NewHope_MonoZ_2017_1210/181012_103224/SingleMuon_2017_3.root");
+TFile *fSingleMuon_2017_4 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/NewHope_MonoZ_2017_1210/181012_103249/SingleMuon_2017_4.root");
+TFile *fSingleMuon_2017_5 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleMuon/NewHope_MonoZ_2017_1210/181012_103313/SingleMuon_2017_5.root");
+
 TFile *fSingleElectron_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/SingleElectron/SingleElectron_2017.root");
 
 //Data 2018

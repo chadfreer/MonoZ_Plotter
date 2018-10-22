@@ -130,6 +130,19 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 	TH1D *SingleElectron_2017 = GetDATAhPt(fSingleElectron_2017, "Events", "SingleElectron_2017", "SingleElectron_2017",Branch_count, 0);
 	//TH1D *SingleMuon_2017 = GetDATAhPt(fSingleMuon_2017, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
 	//Stitch together the data
+        TH1D *SingleMuon_2017_1 = GetDATAhPt(fSingleMuon_2017_1, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
+	TH1D *SingleMuon_2017_2 = GetDATAhPt(fSingleMuon_2017_2, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
+	TH1D *SingleMuon_2017_3 = GetDATAhPt(fSingleMuon_2017_3, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
+	TH1D *SingleMuon_2017_4 = GetDATAhPt(fSingleMuon_2017_4, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0);
+	TH1D *SingleMuon_2017_5 = GetDATAhPt(fSingleMuon_2017_5, "Events", "SingleMuon_2017", "SingleMuon_2017",Branch_count, 0); 
+        DoubleEG_2017->Add(SingleMuon_2017_1);
+        DoubleEG_2017->Add(SingleMuon_2017_2);
+        DoubleEG_2017->Add(SingleMuon_2017_3);
+        DoubleEG_2017->Add(SingleMuon_2017_4);
+        DoubleEG_2017->Add(SingleMuon_2017_5);
+
+
+
 	DoubleEG_2017->Add(DoubleMuon_2017);
 	DoubleEG_2017->Add(MuonEG_2017);
 	DoubleEG_2017->Add(SingleElectron_2017);
