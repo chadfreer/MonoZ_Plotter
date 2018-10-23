@@ -23,7 +23,7 @@ TFile *fDY600_800_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/Mono
 TFile *fDY800_1200_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/DYJetsToLL_M-50_HT-800to1200_TuneCP5_13TeV-madgraphMLM-pythia8/DYJetsToLL_M-50_HT-800to1200_2017.root");
 TFile *fDY1200_2500_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/DYJetsToLL_M-50_HT-1200to2500_TuneCP5_13TeV-madgraphMLM-pythia8/DYJetsToLL_M-50_HT-1200to2500_2017.root");
 TFile *fDY2500_Inf_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/DYJetsToLL_M-50_HT-2500toInf_TuneCP5_13TeV-madgraphMLM-pythia8/DYJetsToLL_M-50_HT-2500toInf_2017.root");
-TFile *fWWZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/WWZ_TuneCUETP8M1_14TeV-amcatnlo-pythia8/WWZ_2017.root");
+TFile *fWWZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/WWZ_TuneCP5_13TeV-amcatnlo-pythia8/WWZ_2017.root");
 TFile *fWZZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/WZZ_TuneCP5_13TeV-amcatnlo-pythia8/WZZ_2017.root");
 TFile *fZZZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/ZZZ_2017.root");
 

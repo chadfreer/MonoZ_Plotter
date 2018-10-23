@@ -113,7 +113,7 @@ TH1D * GethPt(TFile *f, TString dataset,TString name,TString title, int Branch_c
 	//tr->Project(name,variable[Branch_count] ,"lep_category==1 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
 
 	//tr->Project(name,variable[Branch_count],"genWeight && puWeight && lep_category==1 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
-        tr->Project(name,variable[Branch_count],"puWeight *genWeight * ( Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0)" && cOther);
+        tr->Project(name,variable[Branch_count],"puWeight * LHEPdfWeight * (lep_category==2 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0)" && cOther);
         float nEv = hPt->Integral(0,nBins[Branch_count]);
 
 	//Color and normalize plots
@@ -206,7 +206,7 @@ TH1D * GetDATAhPt(TFile *f, TString dataset,TString name,TString title, int Bran
 	//TH1D *hPt = new TH1D(name, title, binnum, bins);
 	TH1D *hPt = new TH1D(name, title, nBins[Branch_count], xlow[Branch_count], xhi[Branch_count]);
 	//tr->Project(name,variable[Branch_count] ,"weight" && cBase && cJets && cOther);
-	tr->Project(name,variable[Branch_count] ,"Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
+	tr->Project(name,variable[Branch_count] ,"lep_category==2 &&  Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
 	//float nEv = hPt->Integral(0,nBins[Branch_count]);
 	
 	for (int i = 0; i < nData; ++i) if (Data[i][0]==title) ind = i;
