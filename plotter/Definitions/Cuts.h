@@ -113,15 +113,16 @@ TH1D * GethPt(TFile *f, TString dataset,TString name,TString title, int Branch_c
 	//tr->Project(name,variable[Branch_count] ,"lep_category==1 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
 
 	//tr->Project(name,variable[Branch_count],"genWeight && puWeight && lep_category==1 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
-        tr->Project(name,variable[Branch_count],"puWeight * LHEPdfWeight * (lep_category==2 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0)" && cOther);
+        tr->Project(name,variable[Branch_count],"puWeight * LHEScaleWeight[0] * (lep_category==1 && Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0)" && cOther);
+        //tr->Project(name,variable[Branch_count] , cOther);
         float nEv = hPt->Integral(0,nBins[Branch_count]);
 
 	//Color and normalize plots
 	for (int i = 0; i < nData; ++i) if (Data[i][0]==title) ind = i;
 	double nGen = atof(Data[ind][2]);
 	double kCX = atof(Data[ind][1]);
-	double kSc = (nEv==0) ? 0 : 41200/nGen*kCX;
-	//double kSc = (nEv==0) ? 0 : 16800/nGen*kCX;
+	double kSc = (nEv==0) ? 0 : 41500/nGen*kCX;
+	//double kSc = (nEv==0) ? 0 : 41500/nGen;
 	hPt->Scale(kSc);
 	Color_t kCol;
 	if (Data[ind][4]=="DY") kCol = kPink+1;
@@ -205,8 +206,8 @@ TH1D * GetDATAhPt(TFile *f, TString dataset,TString name,TString title, int Bran
 	//float nEv = tr->GetEntries();
 	//TH1D *hPt = new TH1D(name, title, binnum, bins);
 	TH1D *hPt = new TH1D(name, title, nBins[Branch_count], xlow[Branch_count], xhi[Branch_count]);
-	//tr->Project(name,variable[Branch_count] ,"weight" && cBase && cJets && cOther);
-	tr->Project(name,variable[Branch_count] ,"lep_category==2 &&  Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
+	//tr->Project(name,variable[Branch_count] , cOther);
+	tr->Project(name,variable[Branch_count] ,"lep_category==1 &&  Z_pt > 60 && met_pt > 40 && Z_mass > 81 && Z_mass < 101 && ngood_jets < 2 && ngood_bjets ==0" && cOther);
 	//float nEv = hPt->Integral(0,nBins[Branch_count]);
 	
 	for (int i = 0; i < nData; ++i) if (Data[i][0]==title) ind = i;

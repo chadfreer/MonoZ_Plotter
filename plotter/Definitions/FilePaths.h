@@ -27,6 +27,7 @@ TFile *fWWZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnaly
 TFile *fWZZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/WZZ_TuneCP5_13TeV-amcatnlo-pythia8/WZZ_2017.root");
 TFile *fZZZ_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/ZZZ_2017.root");
 
+TFile *fDY_2017 = new TFile("/eos/cms/store/group/phys_exotica/monoZ/MonoZAnalysis/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8.root");
 
 //MC 2018
 //TFile *fZZ_2018 = new TFile("");

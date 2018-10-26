@@ -1,6 +1,6 @@
 //**********Initial Variables**********
 //Information on process and associated colors
-static TString Data [33][6] =
+static TString Data [34][6] =
 {	/*Dataset*/				/*cross section*/		/*nGen*/		/*kCol*/		/*Process*/		/*To Use*/
 	//MC 2016
 	{"ZZTo2L2Nu",				"0.564",			"8842475",		"kOrange-2",		"ZZ",			"YES"},/*1*/      
@@ -32,14 +32,15 @@ static TString Data [33][6] =
 	{"WWTo2L2Nu_2017",			"11.08",			"1915563",		"kTeal+2",		"WW",			"YES"},/*26*/
 	{"ZZTo2L2Nu_2017",			"0.5644",			"8744768",		"kOrange-2",		"ZZ",			"YES"},/*27*/
 	{"WZTo3LNu_2017",			"5.052",			"10881896",		"kAzure-4",		"WZ",			"YES"},/*28*/
-	//Data 2017
-	{"DoubleEG_2017",			"1",				"1",			"kBlack",		"Data",			"YES"},/*29*/
-	{"DoubleMuon_2017",			"1",				"1",			"kBlack",		"Data",			"YES"},/*30*/
-	{"MuonEG_2017",				"1",				"1",			"kBlack",		"Data",			"YES"},/*31*/
-	{"SingleElectron_2017",			"1",				"1",			"kBlack",		"Data",			"YES"},/*32*/
-	{"SingleMuon_2017",			"1",				"1",			"kBlack",		"Data",			"YES"}/*33*/
+        {"DYJetsToLL_2017",                     "6529",                         "27413121",             "kpink+1",              "DY",                   "YES"},/*29*/
+	//Data 201
+	{"DoubleEG_2017",			"1",				"1",			"kBlack",		"Data",			"YES"},/*30*/
+	{"DoubleMuon_2017",			"1",				"1",			"kBlack",		"Data",			"YES"},/*31*/
+	{"MuonEG_2017",				"1",				"1",			"kBlack",		"Data",			"YES"},/*32*/
+	{"SingleElectron_2017",			"1",				"1",			"kBlack",		"Data",			"YES"},/*33*/
+	{"SingleMuon_2017",			"1",				"1",			"kBlack",		"Data",			"YES"}/*34*/
 };
-static Int_t nData = 33;
+static Int_t nData = 34;
 //**************************************
 
 //static TString Variables [][] =

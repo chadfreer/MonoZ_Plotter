@@ -73,22 +73,24 @@ TCanvas * Distribution_Ratio_plots(int Branch_count) {
 //        DYJetsToLL50To100->Add(DYJetsToLL650Toinf);
 	
 	//Now 2017 ht-binned DY
-	TH1D *DYJetsToLL_HT70to100 = GethPt(fDY70_100_2017, "Events", "DYJetsToLL_HT-70to100_2017","DYJetsToLL_HT-70to100_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT100to200 = GethPt(fDY100_200_2017, "Events", "DYJetsToLL_HT-100to200_2017","DYJetsToLL_HT-100to200_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT200to400 = GethPt(fDY200_400_2017, "Events", "DYJetsToLL_HT-200to400_2017","DYJetsToLL_HT-200to400_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT400to600 = GethPt(fDY400_600_2017, "Events", "DYJetsToLL_HT-400to600_2017","DYJetsToLL_HT-400to600_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT600to800 = GethPt(fDY600_800_2017, "Events", "DYJetsToLL_HT-600to800_2017","DYJetsToLL_HT-600to800_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT800to1200 = GethPt(fDY800_1200_2017, "Events", "DYJetsToLL_HT-800to1200_2017","DYJetsToLL_HT-800to1200_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT1200to2500 = GethPt(fDY1200_2500_2017, "Events", "DYJetsToLL_HT-1200to2500_2017","DYJetsToLL_HT-1200to2500_2017",Branch_count, 0);
-	TH1D *DYJetsToLL_HT2500toInf = GethPt(fDY2500_Inf_2017, "Events", "DYJetsToLL_HT-2500toInf_2017","DYJetsToLL_HT-2500toInf_2017",Branch_count, 0);
-	//Stitch them all together
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT100to200);
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT200to400);
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT400to600);
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT600to800);
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT800to1200);
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT1200to2500);
-	DYJetsToLL_HT70to100->Add(DYJetsToLL_HT2500toInf);
+	//TH1D *DYJetsToLL_HT70to100 = GethPt(fDY70_100_2017, "Events", "DYJetsToLL_HT-70to100_2017","DYJetsToLL_HT-70to100_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT100to200 = GethPt(fDY100_200_2017, "Events", "DYJetsToLL_HT-100to200_2017","DYJetsToLL_HT-100to200_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT200to400 = GethPt(fDY200_400_2017, "Events", "DYJetsToLL_HT-200to400_2017","DYJetsToLL_HT-200to400_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT400to600 = GethPt(fDY400_600_2017, "Events", "DYJetsToLL_HT-400to600_2017","DYJetsToLL_HT-400to600_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT600to800 = GethPt(fDY600_800_2017, "Events", "DYJetsToLL_HT-600to800_2017","DYJetsToLL_HT-600to800_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT800to1200 = GethPt(fDY800_1200_2017, "Events", "DYJetsToLL_HT-800to1200_2017","DYJetsToLL_HT-800to1200_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT1200to2500 = GethPt(fDY1200_2500_2017, "Events", "DYJetsToLL_HT-1200to2500_2017","DYJetsToLL_HT-1200to2500_2017",Branch_count, 0);
+	//TH1D *DYJetsToLL_HT2500toInf = GethPt(fDY2500_Inf_2017, "Events", "DYJetsToLL_HT-2500toInf_2017","DYJetsToLL_HT-2500toInf_2017",Branch_count, 0);
+	////Stitch them all together
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT100to200);
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT200to400);
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT400to600);
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT600to800);
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT800to1200);
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT1200to2500);
+	//DYJetsToLL_HT70to100->Add(DYJetsToLL_HT2500toInf);
+
+        TH1D *DYJetsToLL_HT70to100 = GethPt(fDY_2017, "Events", "DYJetsToLL_2017","DYJetsToLL_2017",Branch_count, 0);
 
 	TH1D *fullMC = (TH1D*)DYJetsToLL_HT70to100->Clone("copy");
 	fullMC->Add(ZZTo2L2Nu_2017);
